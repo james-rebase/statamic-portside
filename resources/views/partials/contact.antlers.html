@@ -1,0 +1,9 @@
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Ready to elevate your digital presence? Leave your email below...</p>
+    <form method="POST"
+        {{ csrf }}
+        <input type="email" name="email" placeholder="Your email" />
+        <button type="submit">Submit</button>
+    </form>
+</section>

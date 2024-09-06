@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="//unpkg.com/alpinejs" defer></script>
+        <title>Portside Digital</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/site.css" />
+
+        <style>
+            /* Custom CSS for Background */
+            body {
+                background-image: url("large-background.png");
+
+                background-repeat: no-repeat; /* Prevent the image from repeating */
+                background-position: center; /* Center the background image */
+                min-height: 100vh;
+            }
+        </style>
+    </head>
+    <body class="font-sans antialiased h-screen flex flex-col">
+        <!-- Include the Statamic partials -->
+        <!-- Flex-grow class is added to the main content wrapper -->
+        <main class="flex-grow">
+            {{ partial:nav }} {{ partial:hero }} {{ partial:modal }}
+        </main>
+
+        <!-- Footer will stay at the bottom of the page -->
+        {{ partial:footer }}
+    </body>
+</html>

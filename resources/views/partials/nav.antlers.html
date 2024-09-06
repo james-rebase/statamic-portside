@@ -1,0 +1,48 @@
+<nav
+    class="container pt-4 px-2 mx-auto flex flex-col sm:flex-row justify-between items-center"
+    x-data="{ openModal: false }"
+>
+    <div class="w-3/12 sm:w-1/12 mb-4 sm:mb-0">
+        <img src="white-logo.png" alt="Portside Digital Logo" />
+    </div>
+
+    <div class="flex space-x-4">
+        <!-- Modified "Get Started" button to open the modal -->
+        <button @click="openModal = true" class="custom-yellow-button">
+            Email the team
+        </button>
+    </div>
+
+    <!-- Modal Structure -->
+    <div
+        x-show="openModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-75 px-4"
+    >
+        <div
+            class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md sm:w-auto sm:max-w-lg"
+        >
+            <!-- Close button -->
+            <button
+                @click="openModal = false"
+                class="text-gray-500 hover:text-gray-700 float-right"
+            >
+                &times;
+            </button>
+            <h2 class="text-xl mb-4">Let's discuss your requirements</h2>
+            <p>Pop us your email address and we'll get back to you.</p>
+            <form method="POST" action="/submit">
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    class="w-full p-2 border border-gray-300 rounded mb-4"
+                />
+                <!-- Applying your custom class to the submit button -->
+                <button type="submit" class="custom-yellow-button w-full">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>

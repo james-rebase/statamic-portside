@@ -1,0 +1,61 @@
+<section class="flex justify-center" x-data="{ openModal: false }">
+    <div
+        class="bg-light-blue-100 p-12 grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center"
+    >
+        <div class="max-w-xl">
+            <h1 class="text-6xl text-white font-bold mb-4">
+                Elevating Luxury Yacht Brands with Bespoke Digital Solutions
+            </h1>
+            <p class="text-xl text-gray-200 mb-6">
+                Blending maritime heritage with cutting-edge design to create
+                stunning digital experiences tailored to the luxury yacht
+                industry.
+            </p>
+            <div class="flex space-x-4">
+                <!-- Modified "Start a trial" button to open the modal -->
+                <button @click="openModal = true" class="custom-yellow-button">
+                    Email the team
+                </button>
+            </div>
+        </div>
+        <div class="relative">
+            <img
+                src="boat-vision-new.png"
+                alt="Hero Image"
+                class="w-11/12 h-auto mx-auto md:mx-0"
+            />
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div
+        x-show="openModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-75"
+    >
+        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+            <!-- Close button -->
+            <button
+                @click="openModal = false"
+                class="text-gray-500 hover:text-gray-700 float-right"
+            >
+                &times;
+            </button>
+            <h2 class="text-xl mb-4">Submit</h2>
+            <form method="POST" action="/submit">
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    class="w-full p-2 border border-gray-300 rounded mb-4"
+                />
+                <button
+                    type="submit"
+                    class="w-full bg-blue-500 text-white p-2 rounded"
+                >
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
